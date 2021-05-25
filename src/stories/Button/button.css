@@ -1,0 +1,57 @@
+.tw-btn {
+  font-family: Helvetica, Arial, sans-serif;
+  /* font-weight: 700; */
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Color  */
+.tw-btn--primary {
+  color: white;
+  background-color: #1ea7fd;
+}
+.tw-btn--secondary {
+  color: #333;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+/* Status */
+.tw-btn:hover {
+  opacity: 0.8;
+}
+
+.tw-btn--primary:active {
+  opacity: 1;
+  background-color: #1598e9;
+}
+
+.tw-btn--secondary:active {
+  opacity: 1;
+  background-color: rgb(238, 238, 238);
+}
+
+/* Variants */
+.tw-btn--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+
+.tw-btn--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+
+.tw-btn--large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
+
+.tw-btn-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

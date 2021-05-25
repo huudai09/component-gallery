@@ -1,0 +1,14 @@
+@keyframes spinning-circle {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 150.6 100.4;
+  }
+  100% {
+    stroke-dashoffset: 502;
+    stroke-dasharray: 150.6 100.4;
+  }
+}
+
+.spinner__circle {
+  animation: 1.5s linear spinning-circle infinite;
+}
