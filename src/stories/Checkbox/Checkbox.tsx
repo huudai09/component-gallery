@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./checkbox.css";
 
 export interface CheckboxProps {
   /**
-   * Spinner's color
+   * Label of checkbox
    */
-  color?: string;
+  label?: string;
+  /**
+   * Checkbox's status
+   */
+  checked?: boolean;
+  /**
+   * Checkbox's mode
+   */
+  disabled?: boolean;
+  /**
+   * Event when checkbox changes
+   */
+  onChange?: (val: boolean) => void;
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ color = "#eaeaea" }) => {
+export const Checkbox: React.FC<CheckboxProps> = ({
+  label = "",
+  checked = false,
+  disabled = false,
+  onChange = () => {},
+}) => {
+  const [val, setVal] = useState(checked);
+  const id = (new Date().getTime() + 0.1).toString(16);
+
   return (
-    <div>
-      <input type="checkbox" />
-    </div>
+    <label className="tw-checkbox-container" htmlFor={id}>
+      {label ? <span className="tw-checkbox-label">{label}</span> : null}
+      <input
+        onChange={() => {
+          setVal(!val);
+          onChange(val);
+        }}
+        id={id}
+        disabled={disabled}
+        type="checkbox"
+        checked={val}
+      />
+      <span className="tw-checkbox-checkmark"></span>
+    </label>
   );
 };

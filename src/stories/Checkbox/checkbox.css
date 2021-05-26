@@ -1,14 +1,71 @@
-@keyframes spinning-circle {
-  0% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 150.6 100.4;
-  }
-  100% {
-    stroke-dashoffset: 502;
-    stroke-dasharray: 150.6 100.4;
-  }
+/* The tw-checkbox-container */
+.tw-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.spinner__circle {
-  animation: 1.5s linear spinning-circle infinite;
+/* Hide the browser's default checkbox */
+.tw-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.tw-checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  border-radius: 0.2rem;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.tw-checkbox-container:hover input ~ .tw-checkbox-checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.tw-checkbox-container input:checked ~ .tw-checkbox-checkmark {
+  background-color: #2196f3;
+}
+
+/* When the checkbox is checked, add a blue background */
+.tw-checkbox-container input:disabled ~ .tw-checkbox-checkmark {
+  background-color: #ccc;
+}
+
+/* Create the tw-checkbox-checkmark/indicator (hidden when not checked) */
+.tw-checkbox-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the tw-checkbox-checkmark when checked */
+.tw-checkbox-container input:checked ~ .tw-checkbox-checkmark:after {
+  display: block;
+}
+
+/* Style the tw-checkbox-checkmark/indicator */
+.tw-checkbox-container .tw-checkbox-checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
