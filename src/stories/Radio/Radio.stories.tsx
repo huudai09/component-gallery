@@ -4,14 +4,6 @@ import { Radio, RadioProps } from "./Radio";
 export default {
   title: "TW-DataEntry/Radio",
   component: Radio,
-  // decorators: [
-  //   (Story) => (
-  //     <div style={{ margin: "3em" }}>
-  //       <Story />
-  //       <Story />
-  //     </div>
-  //   ),
-  // ],
 } as Meta;
 
 const Template: Story<RadioProps> = (args) => <Radio {...args} />;
