@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from "react";
-import "./checkbox.css";
+import "./radio.css";
 
-export interface CheckboxProps {
+export interface RadioProps {
   /**
-   * Label of checkbox
+   * Label of Radio
    */
   label?: string;
   /**
-   * Checkbox's status
+   * Radio's status
    */
   checked?: boolean;
   /**
-   * Checkbox's mode
+   * Radio's mode
    */
   disabled?: boolean;
   /**
-   * Event when checkbox changes
+   * Radio's value
+   */
+  value?: string;
+  /**
+   * Event when Radio changes
    */
   onChange?: (val: boolean) => void;
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({
+export const Radio: React.FC<RadioProps> = ({
   label = "",
+  value = "",
   checked = false,
   disabled = false,
   onChange = () => {},
@@ -34,19 +39,20 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   }, [checked]);
 
   return (
-    <label className="tw-checkbox-container" htmlFor={id}>
-      {label ? <span className="tw-checkbox-label">{label}</span> : null}
+    <label className="tw-radio-container" htmlFor={id}>
+      {label ? <span className="tw-radio-label">{label}</span> : null}
       <input
         onChange={() => {
           setVal(!val);
           onChange(val);
         }}
+        value={value}
         id={id}
         disabled={disabled}
-        type="checkbox"
+        type="radio"
         checked={val}
       />
-      <span className="tw-checkbox-checkmark"></span>
+      <span className="tw-radio-checkmark"></span>
     </label>
   );
 };
