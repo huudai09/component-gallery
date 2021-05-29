@@ -1,26 +1,6 @@
+@import url("../common.css");
+
 .tw-input-wrapper {
   display: flex;
   flex-direction: column;
-}
-
-.tw-input-wrapper span {
-  margin-bottom: 0.5rem;
-}
-
-.tw-input {
-  border-radius: 0.25rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #c3c3c3;
-  outline: none;
-  transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-.tw-input:focus {
-  box-shadow: 0px 0px 0px 2px #1790ef45;
-  border-color: #23ace2;
-}
-
-.tw-input:disabled {
-  background-color: #cecece;
-  border-color: transparent;
 }
