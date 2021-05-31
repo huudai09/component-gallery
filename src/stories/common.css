@@ -13,6 +13,7 @@
 
 .tw-input {
   border-radius: 0.25rem;
+  box-sizing: border-box;
   padding: 0.5rem 0.75rem;
   border: 1px solid #c3c3c3;
   background-color: #fff;
@@ -28,4 +29,19 @@
 .tw-input:disabled {
   background-color: #cecece;
   border-color: transparent;
+}
+
+/*  Modal */
+.tw-modal {
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%),
+    0 9px 28px 8px rgb(0 0 0 / 5%);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }

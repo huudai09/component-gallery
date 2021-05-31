@@ -10,3 +10,7 @@ export default {
 const Template: Story<DatepickerProps> = (args) => <Datepicker {...args} />;
 
 export const Normal = Template.bind({});
+Normal.args = {
+  value: "30/05/2021",
+  placeholder: "Datepicker",
+};

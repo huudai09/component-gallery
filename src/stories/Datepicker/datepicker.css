@@ -1,0 +1,61 @@
+.tw-dp-container {
+  position: relative;
+  width: 300px;
+  height: 500px;
+}
+
+.tw-dp-container input {
+  width: 100%;
+}
+
+.tw-dp-modal {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  pointer-events: all !important;
+  opacity: 1 !important;
+}
+
+.tw-dp-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tw-dp-header-view {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tw-dp-btn-header {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tw-dp-btn-header:before {
+  display: inline-block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-left: 1px solid rgb(100, 100, 100);
+  border-bottom: 1px solid rgb(100, 100, 100);
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.tw-dp-btn-header:hover .tw-dp-btn-header:before {
+  border-left-color: rgb(165, 165, 165);
+  border-bottom-color: rgb(165, 165, 165);
+}
+
+.tw-dp-btn-back:before {
+  transform: rotate(45deg);
+}
+
+.tw-dp-btn-next:before {
+  transform: rotate(-135deg);
+}
