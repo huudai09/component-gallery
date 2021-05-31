@@ -1,4 +1,5 @@
 import React from "react";
+import { SampleProvider } from "./Context";
 import "./sample.css";
 
 export interface SampleProps {
@@ -8,6 +9,14 @@ export interface SampleProps {
   label?: string;
 }
 
-export const Sample: React.FC<SampleProps> = ({ label = "" }) => {
+const SampleRoot: React.FC<SampleProps> = ({ label = "" }) => {
   return <div>Sample</div>;
+};
+
+export const Sample: React.FC<SampleProps> = (props) => {
+  return (
+    <SampleProvider>
+      <SampleRoot {...props} />
+    </SampleProvider>
+  );
 };
