@@ -1,8 +1,10 @@
+import dayjs from "dayjs";
 import { createContext, useReducer, Dispatch, useContext } from "react";
 import { IAction, IState, dpReducer } from "./Reducer";
 
 const initialState = {
-  value: "",
+  value: dayjs(new Date()),
+  format: "DD/MM/YYYY",
 };
 
 interface IContext {

@@ -2,9 +2,9 @@ import "../common.css";
 import "./datepicker.css";
 import React, { useEffect } from "react";
 import { InputBaseProps } from "../../interfaces/DataEntry";
-import { DatepickerProvider, useDatepickerState } from "./Context";
+import { DatepickerProvider, useDatepickerState } from "./Store/Context";
 import { useDatepickerAction } from "./Hooks";
-import { IDatepickerActionType } from "./Reducer";
+import { IDatepickerActionType } from "./Store/Reducer";
 import { DatepickerModal } from "./DatepickerModal";
 
 enum DatepickerMode {
@@ -33,21 +33,17 @@ const DatepickerWrapper: React.FC<DatepickerProps> = ({
   ...props
 }) => {
   const { state, dispatch } = useDatepickerState();
-  const { initial } = useDatepickerAction();
+  const { initial, renderByFormat } = useDatepickerAction();
 
   useEffect(() => {
     initial(value);
-    // dispatch({
-    //   type: IDatepickerActionType.Initial,
-    //   payload: value,
-    // });
-  }, [value]);
+  }, [value, initial]);
 
   return (
     <div className="tw-dp-container">
       <input
         type="text"
-        value={state.value}
+        value={renderByFormat(state.value)}
         onChange={(ev: React.ChangeEvent<HTMLInputElement>) => {
           console.log(ev.target.value);
           dispatch({

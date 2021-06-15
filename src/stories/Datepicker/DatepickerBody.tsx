@@ -1,5 +1,5 @@
 import React from "react";
-import { DatepickerDateBody } from "./DatepickerDateBody";
+import { DatepickerDateBody } from "./Date/DatepickerDateBody";
 
 export const DatepickerBody = () => {
   return (

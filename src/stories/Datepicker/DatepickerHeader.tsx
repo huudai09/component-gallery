@@ -1,5 +1,5 @@
 import React from "react";
-import { DatepickerDateHeader } from "./DatepickerDateHeader";
+import { DatepickerDateHeader } from "./Date/DatepickerDateHeader";
 
 export const DatepickerHeader = () => {
   return (
